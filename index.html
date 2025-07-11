@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Organisation de repas</title>
   <style>
     body {
@@ -102,7 +102,7 @@
 
   <script>
     const ADMIN_PASSWORD = "adhucstat";
-const SHEET_URL = "https://script.google.com/macros/s/AKfycby0IMheCtGhq4ixWDKyn1F18EF0K8oXymjpfHBSpZ76Qo_xQnybLkat9epEh5oUtscSCg/exec";
+    const SHEET_URL = "https://script.google.com/macros/s/AKfycby0IMheCtGhq4ixWDKyn1F18EF0K8oXymjpfHBSpZ76Qo_xQnybLkat9epEh5oUtscSCg/exec";
 
     const form = document.getElementById('repasForm');
     const tableBody = document.querySelector('#participantsTable tbody');
@@ -136,12 +136,12 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycby0IMheCtGhq4ixWDKyn1
           data.forEach(p => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-              <td>${p.nom}</td>
-              <td>${p.accompagnants}</td>
-              <td>${p.manger}</td>
-              <td>${p.boire}</td>
-              <td>${p.matériel}</td>
-              <td>${p.dates}</td>`;
+              <td>${p.nom || ""}</td>
+              <td>${p.accompagnants || ""}</td>
+              <td>${p.manger || ""}</td>
+              <td>${p.boire || ""}</td>
+              <td>${p.materiel || ""}</td>
+              <td>${p.dates || ""}</td>`;
             tableBody.appendChild(tr);
           });
         })
